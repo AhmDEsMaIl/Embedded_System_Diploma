@@ -1,0 +1,149 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    for(;;)
+    {
+
+
+        int x=0;
+        int y=0;;
+        int z=0;
+        int g=0;
+        printf("Please enter  number\n");
+        scanf("%d",&x);
+        printf("the number is %d\n",x);
+
+        for (int j=2; j<8000; j=j+1)
+        {
+
+
+            z=0;
+
+            for(int i=2; i<=j/2  && z==0; i=i+1)
+            {
+
+
+                if(j%i==0)
+                {
+                    z=1;
+
+                }
+
+
+            }
+
+
+
+
+            if(g<x)
+            {
+
+
+                if(z==0)
+                {
+                    printf(" \nthe number is Prime  %d\n",j);
+                    ++g;
+
+                }
+            }
+
+
+        }
+
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    for(;;)
+    {
+
+
+        int x;
+        char y;
+        int z;
+        int g=0;
+
+        printf("Please enter first  number\n");
+        scanf("%d",&x);
+        printf("please  enter  second number  \n");
+        scanf("%d",&z);
+        printf("please  enter opertor  \n");
+        scanf(" %c",&y);
+
+        switch(y)
+        {
+            case'+':g=x+y;
+            printf("the sum is %d\n",g);
+            break;
+            case'-':g=x-y;
+            printf("the substract is %d\n",g);
+            break;
+            case'*':g=x*y;
+            printf("the mult is %d\n",g);
+            break;
+            case'/':g=x/y;
+            printf("the division is %d\n",g);
+            break;
+
+            default:printf("the opertor is undefined\n");
+        }
+
+
+
+
+
+
+
+
+    }
+}
+
+
+
+

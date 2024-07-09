@@ -1,0 +1,324 @@
+1)
+int sum_of_number(int arr[],int s)
+{
+    int sum=0,numb,x;
+    for(int i=0;i<s;i++)
+        {
+            sum+=arr[i];
+        }
+        x=(100*101)/2;
+        numb=x-sum;
+    return numb;
+}
+
+
+int main()
+{
+int arr[]={ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
+          18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
+          35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
+          52, 53, 54, 55, 56 , 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68,
+          69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85,
+          86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100};
+int s=sizeof(arr)/sizeof(arr[0]);
+int x= sum_of_number(arr,s);
+printf("x=%d",x);
+}
+2)
+int sum_of_number(int arr[],int s)
+{
+    int sum=0,numb,x;
+    for(int i=0;i<s;i++)
+        {
+            sum+=arr[i];
+        }
+        x=(100*101)/2;
+        numb=sum-x;
+    return numb;
+}
+
+
+int main()
+{
+int arr[]={ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
+          18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
+          35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
+          52, 53, 54, 55, 56 ,57,48, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68,
+          69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85,
+          86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100};
+int s=sizeof(arr)/sizeof(arr[0]);
+int x= sum_of_number(arr,s);
+printf("x=%d",x);
+}
+3)
+int sum_of_number(int arr[],int s)
+{
+    int sum=0,numb,x;
+    for(int i=0;i<s;i++)
+        {
+            sum^=arr[i];
+        }
+
+
+    return sum;
+}
+
+
+int main()
+{
+int arr[]={  1, 1, 3, 3, 5, 6, 6, 8, 8};
+int s=sizeof(arr)/sizeof(arr[0]);
+int x= sum_of_number(arr,s);
+printf("x=%d",x);
+}
+4)
+
+
+
+
+
+
+5)
+int sum_of_number(int arr[],int s)
+{
+    int max=0,numb,x;
+    for(int i=0;i<s;i++)
+        {
+           if(max<arr[i])
+           {
+               max=arr[i];
+           }
+        }
+ int*count =calloc(max,sizeof(int));
+     for(int i=0;i<max;i++)
+     {
+         count[arr[i]]++;
+     }
+     max=0;
+     for(int i=0;i<10;i++)
+        {
+           if(max<count[i])
+           {
+               max=count[i];
+               x=i;
+           }
+        }
+        return x;
+}
+
+
+int main()
+{
+int arr[]={ 1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+int s=sizeof(arr)/sizeof(arr[0]);
+int x= sum_of_number(arr,s);
+printf("x=%d",x);
+}
+6)
+#include <stdio.h>
+#include <stdlib.h>
+char* sortString(char *str)
+{
+    int max=0,x,i;
+
+    int* count =malloc(26/sizeof(int));
+    //*count =0;
+    int coun[26]={0};
+    for(int i=0;i<26;i++)
+    {
+        if(str[i]>='a' &&  str[i]<='z' && str[i]!='\0')
+        {
+        x=str[i]-'a';
+        coun[x]++;
+        printf("x=%d\n",x);
+        }
+
+    }
+    for(int i=0;i<26;i++)
+    {
+        printf("x=%d\n",coun[i]);
+    }
+    for( i=0;i<26;i++)
+    {
+    if(max<coun[i])
+    {
+        max=coun[i];
+        x=i;
+        printf("x=%d",i);
+    }
+    }
+
+    return str[x-1] ;
+}
+int main()
+{
+    int x;
+    char str[]="ahmedselem";
+    char st=sortString(str);
+    printf("st=%c\n",st);
+    printf("Hello world!\n");
+    return 0;
+}
+7)#include <stdio.h>
+#include <stdlib.h>
+int check (int *arr,int s,int num)
+{
+    for(int i=0;i<s;i++)
+    {
+        if(arr[i]==num)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+void swap (int *arr1 ,int s1 ,int *arr2,int s2,int numb)
+{
+    int j=0;
+    for(int i=0;i<s1;i++)
+    {
+        if(arr1[i]!=numb)
+        {
+            arr2[j]=arr1[i];
+            j++;
+        }
+        else
+        {
+            continue;
+        }
+    }
+}
+void array_print(int * arr,int s)
+{
+    for(int i=0;i<s;i++)
+    {
+        printf("%5d",arr[i]);
+    }
+    printf("\n");
+}
+int main()
+{
+    int arr1[10]={1,2,3,4,5,6,7,8,9,10};
+    int arr2[9]={0};
+    int s1=sizeof(arr1)/sizeof(arr1[0]);
+    int s2=sizeof(arr2)/sizeof(arr2[0]);
+    swap(arr1,s1,arr2,s2,8);
+    array_print(arr2,s2);
+    printf("Hello world!\n");
+    return 0;
+}
+#include <stdio.h>
+#include <stdlib.h>
+void array_print(int *arr,int s)
+{
+    for(int i=0;i<s;i++)
+    {
+        printf("%d",arr[i]);
+    }
+    printf("\n");
+}
+void string_printf(char *str)
+{
+    for(int i=0;str[i]; i++)
+    {
+
+      printf(" %c",str[i]);
+    }
+                printf("\n");
+
+}
+void  count (char *str1,char *str2 )
+{
+    int count[26]={0},j=0,x=0;
+    for(int i =0;str1[i];i++)
+    {
+        x=str1[i]-'a';
+        count[x]++;
+
+        if(count[x]==1)
+        {
+
+            //printf("%d",count[x]);
+            str2[j]='a'+x;
+             printf("%c",str2[j]);
+            j++;
+            //printf("%d",x);
+            //array_print(count,26);
+
+        }
+
+    }
+    str2[j]=0;
+//array_print(count,26);
+//string_printf(str2);
+}
+int main()
+{
+   char str1[]="ahmed selem kamel";
+   char str2[]="";
+    count(str1,str2);
+    string_printf(str2);
+    printf("Hello world!\n");
+    return 0;
+}
+8)
+#include <stdio.h>
+#include <stdlib.h>
+int check (int *arr,int s,int num)
+{
+    for(int i=0;i<s;i++)
+    {
+        if(arr[i]==num)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+void swap (int *arr1 ,int s1 ,int *arr2,int s2,int numb)
+{
+    int j=0;
+    if(check(arr1,s1,numb))
+    {
+
+    for(int i=0;i<s1;i++)
+    {
+        if(arr1[i]!=numb)
+        {
+            arr2[j]=arr1[i];
+            j++;
+        }
+        else
+        {
+            continue;
+        }
+    }
+    }
+    else
+    {
+        printf("number not found in array\n");
+    }
+}
+void array_print(int * arr,int s)
+{
+    for(int i=0;i<s;i++)
+    {
+        printf("%5d",arr[i]);
+    }
+    printf("\n");
+}
+int main()
+{
+    int arr1[10]={1,2,3,4,5,6,7,8,9,10};
+    int arr2[9]={0};
+    int numb=15;
+    int s1=sizeof(arr1)/sizeof(arr1[0]);
+    int s2=sizeof(arr2)/sizeof(arr2[0]);
+    swap(arr1,s1,arr2,s2,numb);
+    if(check(arr1,s1,numb))
+    array_print(arr2,s2);
+    printf("Hello world!\n");
+    return 0;
+}
+
+9)

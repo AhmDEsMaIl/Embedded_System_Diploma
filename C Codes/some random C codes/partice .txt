@@ -1,0 +1,207 @@
+#include <stdio.h>
+#include <stdlib.h>
+void baseof2(float n)
+{
+    while(n!=1&&n>0)
+    {
+        n=n/2;
+    }
+    if(n==1)
+    {
+        printf("base of 2");
+
+    }
+    else
+    {
+        printf(" NOOOT base of 2");
+
+    }
+
+}
+void Baseof2(int n)
+{
+    int x,y;
+    x=n-1;
+    y=x&n;
+    if(y==0)
+    {
+        printf("base of 2");
+
+    }
+    else
+    {
+        printf(" NOOOT base of 2");
+
+    }
+
+}
+void BAseof2(int n)
+{
+    int x,y;
+    x=~n;
+    ++x;
+    y=x&n;
+    if(y==n)
+    {
+        printf("base of 2");
+
+    }
+    else
+    {
+        printf(" NOOOT base of 2");
+
+    }
+
+}
+
+int main()
+{
+    while(1)
+    {
+
+    float x,y,z;
+    printf("please enter number\n");
+    scanf("%f",&x);
+    baseof2(x);
+    printf("\n");
+    Baseof2(x);
+    printf("\n");
+    BAseof2(x);
+    printf("\n");
+    
+    return 0;
+
+}
+}
+
+/////////////////code to enter to numb and check nubers btween them if numb less tham 9 so print in eng with char and if bigger than 9 check if even print even if odd pribt odd ////////////////// 
+
+int main()
+{
+    int a, b;
+    scanf("%d\n%d", &a, &b);
+  	// Complete the code.
+      for(int i=a;i<=b;i++)
+      {
+          if(i<=9)
+          {
+              switch (i)
+              {
+                  case 1:
+                  printf("one");
+                  break;
+                  case 2:
+                  printf("two");
+                  break;
+                  case 3:
+                  printf("three;
+                  break;
+                  case 4:
+                  printf("four");
+                  break;
+                  case 5:
+                  printf("five");
+                  break;
+                  case 6 :
+                  printf("six");
+                  break;
+                  case 7:
+                  printf("seven");
+                  break;
+                  case 8:
+                  printf("eight");
+                  break;
+                  default:
+                  printf("nine");
+                  break;
+
+
+              }
+          }
+          else {
+          if(i%2==0)
+          {
+              printf("even");
+          }
+          else {
+          printf("odd");
+          }
+          }
+
+      }
+
+    return 0;
+}
+
+//////////////////////////////////////////////////code to check occurcce of numbrt by make invervtting loop////////////////////////////
+#include <stdio.h>
+#include <stdlib.h>
+int repeatnumb (int arr[],int x)
+{
+    int i;
+    for(i=9;i>=0;--i)
+    {
+        if(arr[i]==x)
+        {
+            printf("the index is %d",i);
+            break;
+        }
+    }
+}
+int main()
+{
+    int arr[10]={1,2,3,4,5,6,2,9,2,86};
+    int x;
+    printf("Hello world!\n");
+    scanf("%d",&x);
+    repeatnumb(arr,x);
+    return 0;
+}
+////////////////code to find max count of number in array that consecutive nubers(number that have seq like 1,2,3,4,5,6 and return count and first index of seq and last///////////////
+#include <stdio.h>
+#include <stdlib.h>
+int   themax(int arr[],int s,int *p1)
+{
+    int c=0,max=0,j=0;
+
+    for(int i=0; i<s-1; i++)
+    {
+
+        if(arr[i]+1==arr[i+1])
+        {
+            c++;
+            if(c>max)
+            {
+                *p1=i-max;
+                max=c+1;
+            }
+
+        }
+
+        else
+        {
+            c=0;
+
+        }
+        //printf("arr  %d        arr[i+]%d       c =%d",arr[i],arr[i+1],c);
+        //*p1=j;
+    }
+    return max;
+}
+
+
+
+
+
+
+int main()
+{
+    int p1=0,p2;
+    //int s=30;
+    int arr[30]= {1,2,3,4,5,8,9,10,13,14,15,1,2,3,4,5,6,1,5,9,1,2,3,4,5,6,7,8,82,9};
+    int s= sizeof(arr)/sizeof(arr[0]);
+    themax(arr,s,&p1);
+    printf("the max %d  the first index %d   the last index %d    ",themax(arr,s,&p1),p1,themax(arr,s,&p1)+p1-1);
+    // printf("p1=  %d   p2=%d  ",x,y);
+    return 0;
+}

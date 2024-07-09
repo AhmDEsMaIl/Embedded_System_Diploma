@@ -1,0 +1,594 @@
+1)
+#include <stdio.h>
+#include <stdlib.h>
+void string_printf(char *str)
+{
+    for(int i=0;str[i];i++)
+    {
+        printf("%c",str[i]);
+    }
+    printf("\n");
+}
+int string_length(char str[])
+{
+    int i=0;
+    for(i=0;str[i];i++)
+    {
+
+    }
+    printf("\n");
+    return i;
+}
+void revse (char str[])
+{
+    int l = string_length(str);
+    char temp=0;
+    int i=0,j=l-1;
+    for(;i<=j;i++,j--)
+    {
+        temp=str[i];
+        str[i]=str[j];
+        str[j]=temp;
+    }
+
+}
+
+
+
+
+int main()
+{
+
+
+   char str[]="ahmed ismail";
+   revse(str);
+   string_printf(str);
+
+}
+2)
+#include <stdio.h>
+#include <stdlib.h>
+void string_printf(char *str)
+{
+    for(int i=0;str[i];i++)
+    {
+        printf("%c",str[i]);
+    }
+    printf("\n");
+}
+int string_length(char str[])
+{
+    int i=0;
+    for(i=0;str[i];i++)
+    {
+
+    }
+    printf("\n");
+    return i;
+}
+void revse (char str[])
+{
+    int l = string_length(str);
+    char temp=0;
+    int i=0,j=l-1;
+    for(;i<=j;i++,j--)
+    {
+        temp=str[i];
+        str[i]=str[j];
+        str[j]=temp;
+    }
+
+}
+
+
+int  compare (char str[])
+{
+    int l=string_length(str);
+    char str2[]="0";
+    for(int i=0;i<6;i++)
+    {
+        str2[i]=str[i];
+    }
+    revse(str);
+    for(int i=0;i<6;i++)
+    {
+        if(str[i]!=str2[i])
+        {
+            return 0;
+        }
+
+    }
+    return 1;
+
+}
+
+
+int main()
+{
+
+
+   char str[]="salasf";
+   /if(compare(str))
+   {
+       printf("ok");
+   }
+   else
+   {
+       printf("NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+   }
+
+}
+3)
+#include <stdio.h>
+#include <stdlib.h>
+void string_printf(char str[])
+{
+    for(int i=0; str[i]; i++)
+    {
+        printf(" %c",str[i]);
+    }
+    printf("\n");
+}
+int string_length(char str[])
+{
+    int i=0;
+    for(i=0; str[i]; i++)
+    {
+
+    }
+    printf("\n");
+    return i;
+}
+void  string (char str[])
+{
+    int i=0;
+    scanf(" %c",&str[i]);
+    for(; str[i]!='\n';)
+    {
+        i++;
+        scanf("%c",&str[i]);
+    }
+    str[i]=0;
+
+
+}
+
+void revse (char str[])
+{
+    int l = string_length(str);
+    char temp=0,i=0,j=l-1;
+    for(; i<=j; i++,j--)
+    {
+        temp=str[i];
+        str[i]=str[j];
+        str[j]=temp;
+    }
+
+}
+void subrevse (char str[],int f,int la)
+{
+    int l = string_length(str);
+    char temp=0,i=f,j=la;
+    for(; i<=j; i++,j--)
+    {
+        temp=str[i];
+        str[i]=str[j];
+        str[j]=temp;
+    }
+
+}
+
+void revsesentence(char*str)
+{
+    int l=string_length(str);
+    int x,y;
+    for(int i=0; i<l; i++)
+    {
+        if(str[i]==' ')
+        {
+            x=i;
+            for(int j=x+1; j<l; j++)
+            {
+                if(str[j]==' ')
+                {
+                    y=j;
+                    j=y;
+                    subrevse(str,x+1,y-1);
+                    break;
+                }
+            }
+        }
+    }
+    subrevse(str,l-6,l-1);
+}
+
+    int main()
+    {
+        char str[]="I work as an embedded software engineer for 3 years";
+        revsesentence(str);
+        //subrevse(str,0,4);
+        revse(str);
+        string_printf(str);
+        return 0;
+    }
+
+	
+4)
+#include <stdio.h>
+#include <stdlib.h>
+void string_printf(char str[])
+{
+    for(int i=0; str[i]; i++)
+    {
+        printf(" %c",str[i]);
+    }
+    printf("\n");
+}
+int string_length(char str[])
+{
+    int i=0;
+    for(i=0; str[i]; i++)
+    {
+
+    }
+    printf("\n");
+    return i;
+}
+void  string (char str[])
+{
+    int i=0;
+    scanf(" %c",&str[i]);
+    for(; str[i]!='\n';)
+    {
+        i++;
+        scanf("%c",&str[i]);
+    }
+    str[i]=0;
+
+
+}
+
+int str1 (char *str,int *arr)
+{
+    int i=0,c=0,x=0,j=0;
+   for(;str[i];i++)
+    {
+        if(str[i]!=' ')
+        {
+        if(str[i]>='0' && str[i]<='9')
+       {
+        x=str[i]-'0';
+        c=c*10+x;
+        printf("c=%d\n",c);
+        }
+        else
+        {
+            printf("NOT TRIANGLE");
+            return 0;
+        }
+
+        }
+        else
+        {
+           arr[j]=c;
+            j++;
+            c=0;
+
+        }
+    }
+           printf("c#=%d\n",c);
+
+    }
+char* triangle (char *str, int *arr, char *str3)
+{
+     str1(str,arr);
+    /*printf("func= %d",x);
+    if(x==0)
+    {
+        return 0;
+    }*/
+
+        if(arr[0]==arr[1] && arr[1]==arr[2]&& arr[0]==arr[2] )
+        {
+          str3="triangle";
+          return str3;
+        }
+        else if(arr[0]==arr[1] ||arr[1]==arr[2] || arr[0]==arr[2])
+        {
+             str3="Isosceles triangle";
+            return str3;
+        }
+        else if(arr[0]!=arr[1] &&  arr[1]!=arr[2] && arr[0]!=arr[2])
+        {
+             str3="Scalene triangle";
+            return str3;
+        }
+
+
+}
+
+
+    int main()
+    {
+        char str[]="10 5 7 ";
+        char str2[]="";
+        int arr[]={0};
+        int p1=0;
+        triangle(str,arr,str);
+        string_printf(triangle(str,arr,str2));
+        return 0;
+    }
+
+5)
+#include <stdio.h>
+#include <stdlib.h>
+int digits_after_decimal_point(float x)
+{
+    int c=0;
+    while ((int)x != x)
+    {
+
+        x *= 10;
+        c++;
+    }
+    return c;
+}
+void inttostring (float x,char str[])
+{
+    int i=0,rem=0,f,y,n;
+    y=digits_after_decimal_point(x);
+     printf("%d\n",y);
+    for(int i=0;i<y;i++)
+    {
+        x=x*10;
+        printf("  %f  \n",x);
+    }
+    n=x;
+    if(n==0)
+    {
+        str[0]='0';
+        str[1]=0;
+    }
+    else if ( n<0)
+    {
+        f=1;
+       n=n*(-1);
+    }
+
+    while(n)
+    {
+        if(i==y)
+            {
+               str[i]='.';
+               i++;
+            }
+        rem=n%10;
+        rem=rem+'0';
+        str[i]=rem;
+        i++;
+        n=n/10;
+    }
+    if(f==1)
+    {
+        str[i]='-';
+        i++;
+    }
+    str[i]=0;
+    revse(str);
+
+
+}
+void revse (char str[])
+{
+    int l = string_length(str);
+    char temp=0;
+    int i=0,j=l-1;
+    for(;i<=j;i++,j--)
+    {
+        temp=str[i];
+        str[i]=str[j];
+        str[j]=temp;
+    }
+
+}
+void string_printf(char str[])
+{
+    for(int i=0;str[i];i++)
+    {
+        printf(" %c",str[i]);
+    }
+    printf("\n");
+}
+int string_length(char str[])
+{
+    int i=0;
+    for(i=0;str[i];i++)
+    {
+
+    }
+    printf("\n");
+    return i;
+}
+int main()
+{
+    float x=-3.5842155;
+    char str[]="";
+    inttostring(x,str);
+    string_printf(str);
+    return 0;
+}
+6)
+
+#include <stdio.h>
+#include <stdlib.h>
+void string_printf(char str[])
+{
+    for(int i=0;str[i];i++)
+    {
+        printf(" %c",str[i]);
+    }
+    printf("\n");
+}
+int string_length(char str[])
+{
+    int i=0;
+    for(i=0;str[i];i++)
+    {
+
+    }
+    printf("\n");
+    return i;
+}
+int compare (char *arr1,int s1, char *arr2, int s2,int *p)
+{
+    int c=0,c1=0;
+    for(int i=0,j=0;i<s1;i++,j++)
+    {
+        if(arr1[i]!=' ')
+        {
+            if(arr1[i]==arr2[j])
+            {
+                c++;
+
+            }
+            else
+            {
+                c=0;
+            }
+
+        }
+         if (c1<c)
+		 {
+		 c1=c;
+        *p=i;
+		 }
+
+        if(arr1[i]==' ')
+        {
+
+            j=-1;
+        }
+
+    }
+    if(c1==s2-1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+void replace (char *arr1,int s1, char *arr2, int s2, char *arr3)
+{
+    int x=0;
+    if(compare(arr1, s1,arr2, s2,&x))
+    {
+        for(int i=x-s2+1,j=0;arr3[j];i++,j++)
+        {
+            arr1[i]=arr3[j];
+        }
+    }
+}
+int main()
+{
+    int x=0;
+    char str1[]="ahmed ismail mohamed";
+    char str2[]="ismail";
+	char str3[]="aymannn";
+    int s1=sizeof(str1)/sizeof(str1[0]);
+    int s2=sizeof(str2)/sizeof(str2[0]);
+    printf("%d\n",compare(str1,s1,str2,s2,&x));
+	replace(str1,s1,str2,s2,str3);
+    string_printf(str1);
+
+    return 0;
+}
+
+
+7)
+#include <stdio.h>
+#include <stdlib.h>
+void string_printf(char str[])
+{
+    for(int i=0;str[i];i++)
+    {
+        printf(" %c",str[i]);
+    }
+    printf("\n");
+}
+int string_length(char str[])
+{
+    int i=0;
+    for(i=0;str[i];i++)
+    {
+
+    }
+    printf("\n");
+    return i;
+}
+void  string (char str[])
+{
+    int i=0;
+    scanf(" %c",&str[i]);
+    for(;str[i]!='\n';)
+    {
+        i++;
+        scanf("%c",&str[i]);
+    }
+    str[i]=0;
+
+
+}
+
+
+int compare1 (char *arr1)
+{
+    int c=0;
+    for(int i=0,j=0;arr1[i];i++,j++)
+    {
+        if(arr1[i]!=' ')
+        {
+
+            if(arr1[i]==arr1[j])
+            {
+                //printf(" %c ",arr1[j]);
+                c++;
+                //printf(" c=%d ",c);
+            }
+        }
+        else
+        {
+
+            j=-1;
+        }
+
+
+
+    }
+    if(arr1[1]=='i')
+    {
+        return c/2;
+    }
+    if(arr1[1]=='e')
+    {
+        return c/5;
+    }
+
+
+}
+
+
+int main()
+{
+
+    char str1[]="";
+    string(str1);
+    compare1(str1);
+    printf("c=%d\n",compare1(str1));
+    string_printf(str1);
+
+
+    return 0;
+
+	

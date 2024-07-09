@@ -1,0 +1,137 @@
+/*if(C==Red)
+	{
+		TIMER0_OC0Mode(OC0_INVERTING);
+		Timer1_OCRA1Mode(OCRA_NON_INVERTING);
+		Timer1_OCRB1Mode(OCRB_NON_INVERTING);
+		OCR0=Color[C].Red;
+		OCR1A=Color[C].Green;
+		OCR1B=Color[C].Bule;
+	}
+	else if(C==Green)
+	{
+		TIMER0_OC0Mode(OC0_NON_INVERTING);
+		Timer1_OCRA1Mode(OCRA_INVERTING);
+		Timer1_OCRB1Mode(OCRB_NON_INVERTING);
+		OCR0=Color[C].Red;
+		OCR1A=Color[C].Green;
+		OCR1B=Color[C].Bule;
+	}
+	else if(C==Bule)
+	{
+		TIMER0_OC0Mode(OC0_NON_INVERTING);
+		Timer1_OCRA1Mode(OCRA_NON_INVERTING);
+		Timer1_OCRB1Mode(OCRB_INVERTING);
+		OCR0=Color[C].Red;
+		OCR1A=Color[C].Green;
+		OCR1B=Color[C].Bule;
+	}
+	else if(C==Orange)
+	{
+		TIMER0_OC0Mode(OC0_INVERTING);
+		Timer1_OCRA1Mode(OCRA_NON_INVERTING);
+		Timer1_OCRB1Mode(OCRB_NON_INVERTING);
+		OCR0=Color[C].Red;
+		OCR1A=Color[C].Green;
+		OCR1B=Color[C].Bule;
+	}
+	else if(C==Yellow)
+	{
+		TIMER0_OC0Mode(OC0_INVERTING);
+		Timer1_OCRA1Mode(OCRA_NON_INVERTING);
+		Timer1_OCRB1Mode(OCRB_NON_INVERTING);
+		OCR0=Color[C].Red;
+		OCR1A=Color[C].Green;
+		OCR1B=Color[C].Bule;
+	}
+	else if(C==Pink)
+	{
+		TIMER0_OC0Mode(OC0_INVERTING);
+		Timer1_OCRA1Mode(OCRA_NON_INVERTING);
+		Timer1_OCRB1Mode(OCRB_NON_INVERTING);
+		OCR0=Color[C].Red;
+		OCR1A=Color[C].Green;
+		OCR1B=Color[C].Bule;
+	}
+	else
+	{
+	TIMER0_OC0Mode(OC0_NON_INVERTING);
+	Timer1_OCRA1Mode(OCRA_NON_INVERTING);
+	Timer1_OCRB1Mode(OCRB_NON_INVERTING);	
+	OCR0=Color[C].Red;
+	OCR1A=Color[C].Green;
+	OCR1B=Color[C].Bule;
+	}*/
+	
+	
+	///////////////////////////////some code of timer//////////////////////////////////////////////
+	
+	
+
+   #include "MemMap.h"
+#include "Utiles.h"
+#include "StdTypes.h"
+#include "DIO_interface.h"
+#include "Motor_interface.h"
+#include "Motor_cfg.h"
+#include "LCD.h"
+#include "ADC.h"
+#include "LED.h"
+#include "Sensors.h"
+#include "Temp_Filter.h"
+#include "Buzzer.h"
+#include "Interrupt.h"
+#include "NVM.h"
+#include "Timer.h"
+#include "RGB.h"
+#define F_CPU     8000000
+#include <util/delay.h>
+#define Global_Enable   sei
+#include "Keypad.h"
+u16 pass=0;
+volatile u8 c=0;
+int main(void)
+{
+	/*Replace with your application code */
+	DIO_Init();
+	LCD_Init();
+	KEYPAD_Init();
+	ADC_Init(VREF_AVCC,ADC_SCALER_64);
+	Temp_FilterInit();
+	EXI_Enable(EX_INT0);
+	EXI_TriggerEdge(EX_INT0,FALLING_EDGE);
+	EXI_Enable(EX_INT1);
+	EXI_TriggerEdge(EX_INT0,RISING_EDGE);
+	TIMER0_Init(TIMER0_FASTPWM_MODE,TIMER0_SCALER_8);
+	TIMER0_OC0Mode(OC0_NON_INVERTING);
+	Timer1_Init(TIMER1_FASTPWM_ICR_TOP_MODE,TIMER1_SCALER_8);
+	Timer1_OCRA1Mode(OCRA_NON_INVERTING);
+	Timer1_OCRB1Mode(OCRB_NON_INVERTING);
+	TIMER2_Init(TIMER2_FASTPWM_MODE,TIMER2_SCALER_8);
+	TIMER2_OC2Mode(OC2_NON_INVERTING);
+	TIMER2_OV_InterruptEnable();
+	Global_Enable();
+	u16 x=0,t1,t2,y;
+	ICR1=255;
+	TCCR2=6;
+	while(1)
+	{
+ 		/*u16 adc=0;
+ 	    adc=ADC_Read(CH_0);    / i will use only these two line of (adc=ADC_Read(CH_0) )and OCR0=255-(adc/4) in LDR to increase or decrease lamp intensity
+     	OCR0=255-(adc/4);*/
+		/*OCR0=118;
+		OCR1A=96;
+		OCR1B=138;*/
+		//Set_RGB(steel);
+		//flashing(Green,Red);
+		//red_to_green();
+		//OCR0=128;
+// 		OCR0=100;
+// 	   _delay_ms(1000);
+// 		TIMER0_OC0Mode(OC0_INVERTING);
+// 		OCR0=0;
+// 		 _delay_ms(1000);
+	    /*OCR1A=160;
+		OCR1B=16;*/
+
+	}
+}

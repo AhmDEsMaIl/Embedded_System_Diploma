@@ -1,0 +1,616 @@
+#include <stdio.h>
+#include <stdlib.h>
+void areaandcirc(int n, float*c, float*a)
+{
+    float r,pi=3.14 ;
+    printf("\n please enter Radius\n");
+    scanf("%f",&r);
+
+    *a=pi*r*r;
+
+    *c=2*pi*r;
+
+
+
+}
+
+int main()
+{
+
+    while(1)
+    {
+        float a,c,n;
+        areaandcirc(n,&c,&a);
+
+    printf("\n The Area is %f\n",a);
+
+    printf("\n The circumference is %f \n",c);
+
+
+
+
+
+
+    }
+
+}
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    while(1)
+    {int x,count,y,pi=3.14,a,c ;
+    count=0;
+    fflush(stdin);
+    printf("\n please enter number\n");
+    scanf("%d",&y);
+    printf("\n please enter char\n");
+    scanf(" %c",&x);
+
+    if(y%2==0)
+    {
+    printf("\n the char \n %c",x);
+
+
+    }
+    else
+    {
+        if(x>='a' &&x<='z')
+        {
+            x=x-'a'+ 'A';
+            printf("\n the char is\n%c",x);
+
+
+        }
+        else if (x>='A' &&x<='Z')
+        {
+            x= x-'A'+'a';
+            printf("\n the char is \n%c",x);
+
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+    }
+
+}
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    while(1)
+    {
+
+        int x,count,y,pi=3.14,a,c ;
+        c=0;
+        fflush(stdin);
+        printf("\n please enter number\n");
+        scanf("%d",&x);
+        for(int i=0; 0<x; ++i)
+        {
+            y=x%10;
+            x=x/10;
+            c=y+c*10;
+        }
+        printf("\n please enter number%d\n",c);
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+}
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    while(1)
+    {
+
+        int x,count,y,pi=3.14,a,c ;
+        c=0;
+        printf("\n please enter number\n");
+        scanf("%d",&x);
+        for(int i=0; i<32; ++i)
+        {
+            if((x>>i)&1)
+            {
+                ++c;
+            }
+
+
+        }
+        printf("\n ones %d\n",c);
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    while(1)
+    {int x,count,y ;
+    count=0;
+    printf("\nplease enter number\n");
+    scanf("%d",&x);
+    for(int i=0;i<32;i++)
+    {
+
+        if((x>>i)&1)
+           {
+               ++count;
+           }
+
+
+
+    }
+
+        for(int i=0;count>0;i++)
+        {
+
+            y=(x>>i)&1;
+            printf("  %d",y);
+
+            if( x>>i&1  )
+            {
+
+              --count;
+
+            }
+        }
+
+
+
+
+
+    }
+
+}
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int revese(int n)
+{
+    int numb=0;
+    for(int i=0;i<32;i++)
+    {
+        if((n>>i)&1)
+        {
+            numb=(numb)^(1<<7-i);
+        }
+    }
+    return numb;
+}
+void showrevsebinary(int n)
+{
+    int x;
+    printf("the binary revse is\n");
+    for(int i=0;i<32;i++)
+    {
+        x=n>>i&1;
+        printf("%d",x);
+
+    }
+}
+void binary(int n)
+{
+    int x;
+    printf("the binary represenation is");
+    for(int i=31;i>=0;i--)
+    {
+        x=(n>>i)&1;
+        printf("%d",x);
+    }
+}
+int main()
+{
+    while(1)
+    {
+
+    int x;
+    printf("please enter number\n");
+    scanf("%d",&x);
+    showrevsebinary(x);
+    printf("\n");
+    binary(x);
+    printf("\nthe revese nmmber is %d\n",revese(x));
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,*p1,*p3;
+    int *p2,y;
+    x=500;
+    y=30;
+    p1=&x;
+    p2=&x;
+    *p1=600;
+    //++p2;
+    //++p1;
+    //*p2=5;
+    //p3=6422015;
+    //p3=100;
+    //*p1=&x;
+
+    printf("x= %d x= %d p1= %d *p1= %d  p2=%d    *p2=%d   \n",&x,x,p1,*p1,p2,*p2);
+
+}
+
+
+
+
+
+
+8)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    while(1)
+    {
+
+
+    int x,y,z,c;
+    printf("\nplease enter number ");
+    scanf("%d",&x);
+    printf("please enter bit number ");
+    scanf("%d",&y);
+    printf("please choose from bits opertions:\n1-Clear bit\n2-Set bit.\n3-Toggle bit.\n4-Read bit.\n ");
+    scanf("%d",&z);
+
+
+    switch(z)
+    {
+    case 1:
+        c=(~(1<<y))&x;
+        printf("\n The clear %d",c);
+        break;
+
+    case 2:
+        c=(1<<y)|x;
+        printf("\n The Set  is%d",c);
+        break;
+
+    case 3:
+        c=(1<<y)^x;
+        printf("\n The toggle is %d",c);
+        break;
+
+    case 4:
+        c=(x>>y)&1;
+        printf("\n The Read is %d",c);
+        break;
+
+
+
+
+
+
+    }
+    }
+
+
+}
+9)
+I)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,y;
+    printf("enter number of rows\n");
+
+    scanf("%d",&x);
+    for(int i=1;i<=x;i++)
+    {
+        for(int j=0;j<=i-1;j++)
+        {
+                printf("i");
+
+        }
+        printf("\n");
+    }
+
+}
+
+(function)
+#include <stdio.h>
+#include <stdlib.h>
+void loop (int x)
+{
+    for(int i=1;i<=x;i++)
+    {
+        for(int j=0;j<=i-1;j++)
+        {
+                printf("i");
+
+        }
+        printf("\n");
+    }
+    return;
+}
+int main()
+{
+    int x,y;
+    printf("Hello world!\n");
+
+    scanf("%d",&x);
+    loop(x);
+
+
+}
+
+
+
+II)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,y;
+  printf("enter number of rows\n");
+
+    scanf("%d",&x);
+    for(int i=x;i>=0;i--)
+    {
+        for(int j=i-1;j>=0-1;j--)
+        {
+                printf("i");
+
+        }
+        printf("\n");
+    }
+
+}
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int maxzeros(int n)
+{
+    int i,c1=0,one=1;
+    for(i=1;i<=32;i++)
+    {
+        ++c1;
+        if((n&one)==one)
+        {
+         one=one<<1;
+         break;
+        }
+       one=one<<1;
+
+
+    }
+    int max=0,c2=c1;
+    for (int j=i+1;j<=32;j++)
+    {
+        ++c2;
+        if((n&one)==one)
+        {
+            if(max<c2-c1-1)
+            {
+                max=c2-c1-1;
+            }
+            c1=c2;
+        }
+        one=one<<1;
+    }
+    return max;
+
+}
+
+int main()
+{
+    int n ;
+    scanf("%d",&n);
+
+
+    printf( "  max number of zeros %d", maxzeros(n));
+    printf("/nnnnnnnn/");
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+11)
+#include <stdio.h>
+#include <stdlib.h>
+int xor(int n, int m)
+{
+    int y=0,max=0xFFFFFFFF;
+    if(n>m)
+    {
+        for(int i=m;i<=n;i++)
+        {
+            for(int j=m;j<=n;j++)
+            {
+                y=i^j;
+                if(y>max)
+                {
+                    max=y;
+                }
+            }
+        }
+    }
+    else
+    {
+        for(int i=n;i<=m;i++)
+        {
+            for(int j=n;j<=m;j++)
+            {
+                y=i^j;
+                if(y>max)
+                {
+                    max=y;
+                }
+            }
+        }
+
+    }
+    return max;
+}
+int main()
+{
+    int n,m;
+    printf("please enter twp number \n");
+    scanf("%d",&n);
+    scanf("%d",&m);
+    printf("the max is %d",xor(n,m));
+
+}
+7)
+#include <stdio.h>
+#include <stdlib.h>
+int sum(void)
+{
+    int sum=0;
+    sum=55+(100*1+55)+(100*2+55)+(100*3+55)+(100*4+55)+(100*5+55)+(100*6+55)+(100*7+55)+(100*8+55)+(100*9+55);
+    return sum;
+}
+int main()
+{
+
+
+    printf("the sum is %d",sum());
+
+}
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    while(1)
+    {
+
+        int x,c,c2=0 ;
+        c=0;
+        printf("please enter number\n");
+        scanf("%d",&x);
+
+
+       for(int i=0;i<32;i++)
+       {
+           //x=~x;
+           if((x>>i)&1)
+           {
+               c=1;
+               c2++;
+
+           }
+
+       }
+       if(c2==1)
+       {
+           printf("base of 2 %d\n",x);
+       }
+       else
+       {
+            printf("base NOOOOT of 2 %d\n");
+
+       }
+       printf(" c2 =%d",c2);
+
+
+
+

@@ -1,0 +1,89 @@
+void fun1(void)
+{
+	DIO_TogglePin(PINC0);
+	//f1++;
+}
+
+void fun2(void)
+{
+	DIO_TogglePin(PINC1);
+	//f2++;
+
+}
+int main(void)
+{
+    /* Replace with your application code */
+	DIO_Init();
+	LCD_Init();
+	KEYPAD_Init();
+	ADC_Init(VREF_AVCC,ADC_SCALER_64);
+    Temp_FilterInit();
+	EXI_Enable(EX_INT0);
+	EXI_TriggerEdge(EX_INT0,FALLING_EDGE);
+	/*EXI_Enable(EX_INT1);
+	EXI_TriggerEdge(EX_INT0,RISING_EDGE);*/	
+	LCD_WriteString("inter");
+    Global_Enable();
+	u8 c=0,i=0;
+	while(1)
+	{
+		c++;
+		if(c==10)
+		{
+			c=0;
+			EXI_SetCallBack(EX_INT0,fun1);
+			EXI_Disable(EX_INT0);
+		}
+		
+		if(c==5)
+		{
+			EXI_SetCallBack(EX_INT0,fun2);
+			EXI_Enable(EX_INT0);
+
+		}
+		_delay_ms(300);
+		
+		LCD_SetCursor(1,0);
+		LCD_WriteNumber(c);
+		LCD_SetCursor(0,8);
+		LCD_WriteString("Ahmed");
+		if(f1>0)
+		{
+			LCD_SetCursor(1,10);
+			LCD_WriteString("int0");
+			
+			f1--;
+			
+		}
+		if(f2>0)
+		{
+			LCD_SetCursor(1,10);
+			LCD_WriteString("int1");
+			LCD_WriteNumber(i);
+			i++;
+			f2--;
+			
+		}
+		/*EEPROM_Write(1,10);
+		EEPROM_Write(1,10);
+        c=EEPROM_Read(1);*/
+		
+	}
+}
+/*ISR(INT0_vect)
+{
+	DIO_TogglePin(PINC0);
+	f1++;
+}
+
+ISR(INT1_vect,ISR_NOBLOCK)
+{
+	DIO_TogglePin(PINC1);
+	f2++;
+	
+	
+}
+ISR(BAD_vect,ISR_NAKED)
+{
+    DIO_TogglePin(PINC2);
+}*/

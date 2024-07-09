@@ -1,0 +1,406 @@
+///////////////////////////////////////////////////////////////////////enter numb of prime numbers/////////////////////////////////////////////////////////////////////////////////////
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    for(;;)
+    {
+
+
+        int x=0;
+        int y=0;;
+        int z=0;
+        int g=0;
+        printf("Please enter  number\n");
+        scanf("%d",&x);
+        printf("the number is %d\n",x);
+
+        for (int j=2;g<x; j=j+1)
+        {
+
+
+            z=0;
+
+            for(int i=2; i<=j/2  && z==0; i=i+1)
+            {
+
+
+                if(j%i==0)
+                {
+                    z=1;
+
+                }
+
+
+            }
+
+
+
+
+            if(g<x)
+            {
+
+
+                if(z==0)
+                {
+                    printf(" \nthe number is Prime  %d\n",j);
+                    ++g;
+
+                }
+            }
+
+
+        }
+
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////enter two numbers and opertor/////////////////////////////////////////////////////////////////////////////
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    for(;;)
+    {
+
+
+        int x;
+        char y;
+        int z;
+        int g=0;
+
+        printf("Please enter first  number\n");
+        scanf("%d",&x);
+        printf("please  enter  second number  \n");
+        scanf("%d",&z);
+        printf("please  enter opertor  \n");
+        scanf(" %c",&y);
+
+        switch(y)
+        {
+            case'+':g=x+z;
+            printf("the sum is %d\n",g);
+            break;
+            case'-':g=x-z;
+            printf("the substract is %d\n",g);
+            break;
+            case'*':g=x*z;
+            printf("the mult is %d\n",g);
+            break;
+            case'/':g=x/z;
+            printf("the division is %d\n",g);
+            break;
+            case'%':g=x%z;
+            printf("the remd is %d\n",g);
+
+
+            default:printf("the opertor is undefined\n");
+        }
+
+
+
+
+
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////another solution for two number and opertor/////////////////////////////////////////////////////////////////////////////
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    for(;;)
+    {
+
+
+        int x;
+        char y;
+        int z;
+        int g=0;
+
+        printf("Please enter first  number\n");
+        scanf("%d",&x);
+        printf("please  enter  second number  \n");
+        scanf("%d",&z);
+        printf("please  enter opertor  \n");
+        scanf(" %c",&y);
+
+        if(y=='+')
+        {
+            g=x+z;
+
+            printf( "the add is  %d\n",g);
+        }
+        else if(y=='-')
+
+        {
+             g=x-z;
+
+            printf("the sub is%d\n",g);
+        }
+        else if(y=='*')
+        {
+             g=x*z;
+
+            printf("the Mul is%d \n",g);
+        }
+        else if(y=='/')
+
+        {
+             g=x/z;
+
+            printf("the didv is %d\n",g);
+        }
+        else if(y=='%')
+        {
+             g=x%z;
+
+            printf("the remd is%d\n",g);
+        }
+        else
+        {
+            printf("undefined opertor\n");
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+void string_printf(char str[])
+{
+    for(int i=0;str[i];i++)
+    {
+        printf(" %c",str[i]);
+    }
+    printf("\n");
+}
+int string_length(char str[])
+{
+    int i=0;
+    for(i=0;str[i];i++)
+    {
+
+    }
+    printf("\n");
+    return i;
+}
+int compare (char *arr1,int s1, char *arr2, int s2,int *p)
+{
+    int c=0,c1=0;
+    for(int i=0,j=0;i<s1;i++,j++)
+    {
+        if(arr1[i]!=' ')
+        {
+            if(arr1[i]==arr2[j])
+            {
+                c++;
+                printf("%d",c);
+                printf("%d",j);
+                *p=i;
+            }
+            else
+            {
+                c=0;
+            }
+
+        }
+        //printf("  %c\n",arr1[i]);
+         if (c1<c)
+		 {
+		 c1=c;
+		 }
+
+        if(arr1[i]==' ')
+        {
+
+            j=-1;
+        }
+       //printf("  %c\n",arr2[j]);
+
+    }
+    if(c1==s2)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+void replace (char *arr1,int s1, char *arr2, int s2, char *arr3,char arr4)
+{
+    int x=0;
+    if(compare(arr1, s1,arr2, s2,&x))
+    {
+        for(int i=x-s2+1,j=0;i<s2;i++,j++)
+        {
+            arr1[i]=arr2[j];
+        }
+    }
+}
+int main()
+{
+    int x=0;
+    char str1[]="ahmed ismail";
+    char str2[]="ismail";
+	char str3[]="ayman"
+	char str4[]="";
+    int s1=sizeof(str1)/sizeof(str1[0]);
+    int s2=sizeof(str2)/sizeof(str2[0]);
+    printf("%d",compare(str1,s1,str2,s2,&x));
+	replace(arr1,s1,s2,arr2,s2,str3,str4);
+    string_printf(str1);
+
+    return 0;
+}
+
+///////////////////////struct ///////////
+#include <stdio.h>
+#include <stdlib.h>
+struct student
+{
+    char name[20];
+    int age;
+    char grade[2];
+};
+void  string (char str[])
+{
+    int i=0;
+    scanf(" %c",&str[i]);
+    for(;str[i]!='\n';)
+    {
+        i++;
+        scanf("%c",&str[i]);
+    }
+    str[i]=0;
+
+
+}
+void scan (struct student *s1,int s)
+{
+    for(int i=0;i<s;i++)
+    {
+    string(s1[i].name);
+    scanf("%d",&s1[i].age);
+    string(s1[i].grade);
+    }
+
+}
+void string_printf(char str[])
+{
+    for(int i=0;str[i];i++)
+    {
+        printf(" %c",str[i]);
+    }
+    printf("\n");
+}
+typedef struct
+{
+   int sum;
+   int sub;
+   int mul;
+   int divd;
+   int remd;
+
+}oper;
+void  fun(oper* s ,int x,int y)
+{
+    s->sum=x+y;
+    s->sub=x-y;
+    s->mul=x*y;
+    s->divd=x/y;
+    s->remd=x%y;
+    return s;
+
+}
+int main()
+{
+    oper s;
+    int x=5,y=5;
+    scanf("%d,%d",&x,&y);
+    fun(&s,x,y);
+    printf("sum us%d\n",s.sum);
+    printf("sub%d\n",s.sub);
+    printf("mul is %d\n",s.mul);
+    printf("divid is %d\n",s.divd);
+    printf("remd is%d\n",s.remd);
+
+    return 0;
+}

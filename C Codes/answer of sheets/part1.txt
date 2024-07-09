@@ -1,0 +1,1205 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    for(;;)
+    {
+
+
+        int x=0;
+        int y=0;;
+        int z=0;
+        int g=0;
+        printf("Please enter  number\n");
+        scanf("%d",&x);
+        printf("the number is %d\n",x);
+
+        for (int j=2; j<8000; j=j+1)
+        {
+
+
+            z=0;
+
+            for(int i=2; i<=j/2  && z==0; i=i+1)
+            {
+
+
+                if(j%i==0)
+                {
+                    z=1;
+
+                }
+
+
+            }
+
+
+
+
+            if(g<x)
+            {
+
+
+                if(z==0)
+                {
+                    printf(" \nthe number is Prime  %d\n",j);
+                    ++g;
+
+                }
+            }
+
+
+        }
+
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,sum=0,flag=0,num,i,num1,num2,count =0;
+
+    while(1)
+    {
+        scanf("%d",&num);
+
+        for(n=2; n<=80000000; n=n+1)
+        {
+            flag=0;
+            for(i=2; i<=n/2&&flag==0; i=i+1)
+            {
+                if(n%i==0)
+                {
+                    flag=1;
+                }
+            }
+            if(count < num)
+            {
+                if(flag==0)
+            {
+                printf("%d  ",n);
+                count =count+1;
+            }
+            }
+        }
+
+    }
+
+
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    for(;;)
+    {
+
+
+        int x;
+        char y;
+        int z;
+        int g=0;
+
+        printf("Please enter first  number\n");
+        scanf("%d",&x);
+        printf("please  enter  second number  \n");
+        scanf("%d",&z);
+        printf("please  enter opertor  \n");
+        scanf(" %c",&y);
+
+        if(y=='+')
+        {
+            g=x+y;
+
+            printf( "the add is  %d\n",g);
+        }
+        else if(y=='-')
+        {
+            printf("the sub is%d\n",x-y);
+        }
+        else if(y=='*')
+        {
+            printf("the Mul is%d \n",x*y);
+        }
+        else if(y=='/')
+        {
+            printf("the didv is %d\n",x/y);
+        }
+        else if(y=='%')
+        {
+            printf("the remd is%d\n",x%y);
+        }
+        else
+        {
+            printf("undefined opertor\n");
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+}
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    for(;;)
+    {
+
+
+        int x;
+        char y;
+        int z;
+        int g=0;
+
+        printf("Please enter first  number\n");
+        scanf("%d",&x);
+        printf("please  enter  second number  \n");
+        scanf("%d",&z);
+        printf("please  enter opertor  \n");
+        scanf(" %c",&y);
+
+        switch(y)
+        {
+            case'+':g=x+y;
+            printf("the sum is %d\n",g);
+            break;
+            case'-':g=x-y;
+            printf("the substract is %d\n",g);
+            break;
+            case'*':g=x*y;
+            printf("the mult is %d\n",g);
+            break;
+            case'/':g=x/y;
+            printf("the division is %d\n",g);
+            break;
+
+            default:printf("the opertor is undefined\n");
+        }
+
+
+
+
+
+
+
+
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////print char if enter small exchange big vice vice //////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    for(;;)
+    {
+
+
+        char x=0;
+        int y=0;;
+        int z=0;
+        int g=0;
+        printf("Please enter  char\n");
+
+        //printf("the number is %d\n",x);
+
+        while(1)
+        {
+            fflush(stdin);
+            scanf("%c",&x);
+            if(x>='A'&& x<= 'Z')
+            {
+
+                printf("\nbig %c\n",x);
+                x= x-'A'+ 'a';
+                printf("\nsmall %c\n",x);
+
+
+            }
+            else if(x>= 'a' && x<= 'z')
+            {
+                printf("small %c",x);
+                x=x- 'a'+ 'A';
+                printf("\nbig %c\n",x);
+
+
+            }
+            else
+            {
+                printf("elseee %c",x);
+
+            }
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    while(1)
+    {int x,count,y ;
+    count=0;
+    printf("\nplease enter number\n");
+    scanf("%d",&x);
+    for(int i=0;i<32;i++)
+    {
+
+        if((x>>i)&1)
+           {
+               ++count;
+           }
+
+
+
+    }
+
+        for(int i=0;count>0;i++)
+        {
+
+            y=(x>>i)&1;
+            printf("  %d",y);
+
+            if( x>>i&1  )
+            {
+
+              --count;
+
+            }
+        }
+
+
+
+
+
+    }
+
+}
+
+
+/////////////////////////code for float number to raise number to next number according to its float/////////////////////
+
+
+int main()
+{
+    while(1)
+    {
+    int x;
+    float y;
+    printf(" enter number \n");
+    scanf("%f",&y);
+    x=y;
+    if(y-x<0.5)
+    {
+        printf("%d",x);
+    }
+    else
+    {
+        x=x+1;
+        printf("%d",x);
+    }
+    }
+
+}
+
+
+//////////////////////another way /////////////
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    while(1)
+    {
+    int x;
+    float y;
+    printf("\nenter number \n");
+    scanf("%f",&y);
+    x=y+0.5;
+     printf(" the result %d",x);
+
+    }
+}
+
+
+
+
+////////////////////////////////////////three diffrent way with function to check number is base of 2 and swap bits function to swap bits and print its swaped number/////////////////////////////////////////////////////////////////////////
+
+#include <stdio.h>
+#include <stdlib.h>
+void baseof2(float n)
+{
+    while(n!=1&&n>0)
+    {
+        n=n/2;
+    }
+    if(n==1)
+    {
+        printf("base of 2");
+
+    }
+    else
+    {
+        printf(" NOOOT base of 2");
+
+    }
+
+}
+void Baseof2(int n)
+{
+    int x,y;
+    x=n-1;
+    y=x&n;
+    if(y==0)
+    {
+        printf("base of 2");
+
+    }
+    else
+    {
+        printf(" NOOOT base of 2");
+
+    }
+
+}
+void BAseof2(int n)
+{
+    int x,y;
+    x=~n;
+    ++x;
+    y=x&n;
+    if(y==n)
+    {
+        printf("base of 2");
+
+    }
+    else
+    {
+        printf(" NOOOT base of 2");
+
+    }
+
+}
+
+int main()
+{
+    while(1)
+    {
+
+    float x,y,z;
+    printf("please enter number\n");
+    scanf("%f",&x);
+    baseof2(x);
+    printf("\n");
+    Baseof2(x);
+    printf("\n");
+    BAseof2(x);
+    printf("\n");
+    
+    return 0;
+
+}
+}
+
+int swap(int n,int bit1,int bit2)
+{
+    n=n^(1<<bit1);
+    n=n^(1<<bit2);
+
+    return n;
+
+}
+///////////////////////////////////////////////////////////////////////string/////////////////////////////////////////
+void string_printf(char str[])
+{
+    for(int i=0;str[i];i++)
+    {
+        printf(" %c",str[i]);
+    }
+    printf("\n");
+}
+int string_length(char str[])
+{
+    int i=0;
+    for(i=0;str[i];i++)
+    {
+
+    }
+    printf("\n");
+    return i;
+}
+void  string (char str[])
+{
+    int i=0;
+    scanf(" %c",&str[i]);
+    for(;str[i]!='\n';)
+    {
+        i++;
+        scanf("%c",&str[i]);
+    }
+    str[i]=0;
+
+
+}
+
+void revse2 (char str[])
+{
+    int l = string_length(str);
+    char temp=0
+	int i=0,,j=l-1;
+    for(;i<ji++,j--)
+    {
+        temp=str[i];
+        str[i]=str[j];
+        str[j]=temp;
+    }
+
+}
+void inttostring (int n,char str[])
+{
+    int i=0,rem=0;
+    if(n==0)
+    {
+        str[0]='0';
+        str[1]=0;
+    }
+    else if ( n<0)
+    {
+       n=n*(-1);
+       i=1;
+       while(n)
+    {
+        rem=n%10;
+        rem=rem+'0';
+        str[i]=rem;
+        i++;
+        n=n/10;
+    }
+     revse(str);
+     str[0]='-';
+
+    }
+    else
+    {
+        i=0;
+    while(n)
+    {
+        rem=n%10;
+        rem=rem+'0';
+        str[i]=rem;
+        i++;
+        n=n/10;
+    }
+    revse(str);
+    }
+
+    str[i]=0;
+}
+int stringtoint (char str[],int *p1)
+{
+    int x=0,c=0,i=0,flag=0;
+    if(str[0]=='-')
+    {
+        flag=1;
+        i++;
+    }
+    for(;str[i];i++)
+    {
+        if(str[i]>='0' && str[i]<='9')
+       {
+        x=str[i]-'0';
+        c=c*10+x;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    if(flag==1)
+    {
+        c=c*-1;
+    }
+    *p1=c;
+    return 1;
+}
+/////////////////////////////////////////////////////////program to return max number wirh use static variable/////////////////////
+#include <stdio.h>
+#include <stdlib.h>
+int max(int n)
+{
+    int static max;
+    //max=n;
+    int static f=0;
+    if(f==0)
+    {
+        max=n;
+        f=1;
+    }
+
+    if(max<n)
+    {
+        max=n;
+    }
+    //printf("%d",max);
+    return max;
+}
+
+int main()
+{
+    int max1=0,x=0;
+    max(-1);
+    max(-1);
+    max(-9);
+    max(-60);
+    while(1)
+    {
+        scanf("%d",&x);
+        printf("max%d\n",max(x));
+    }
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////
+int  compare (char str[])
+{
+    int l=string_length(str);
+
+    char str2[]="0";
+   printf("%s",str2);
+
+    /*for(int i=0;i<5;i++)
+    {
+        str2[i]=str[i];
+        printf("str2= %d",l);
+    }
+    revse(str);
+    for(int i=0;i<l;i++)
+    {
+        if(str[i]!=str2[i])
+        {
+            return 0;
+        }
+
+    }
+    return 1;*/
+
+}
+
+
+///////////////////////////////////////////////////////////////
+#include <stdio.h>
+#include <stdlib.h>
+void string_printf(char str[])
+{
+    for(int i=0; str[i]; i++)
+    {
+        printf(" %c",str[i]);
+    }
+    printf("\n");
+}
+
+void  string (char str[])
+{
+    int i=0;
+    scanf(" %c",&str[i]);
+    for(; str[i]!='\n';)
+    {
+        i++;
+        scanf("%c",&str[i]);
+    }
+    str[i]=0;
+
+
+}
+
+void revse (char str[])
+{
+    int l = string_length(str);
+    char temp=0,i=0,j=l-1;
+    for(; i<=j; i++,j--)
+    {
+        temp=str[i];
+        str[i]=str[j];
+        str[j]=temp;
+    }
+
+}
+void subrevse (char str[],int f,int la)
+{
+    int l = string_length(str);
+    char temp=0,i=f,j=la;
+    for(; i<=j; i++,j--)
+    {
+        temp=str[i];
+        str[i]=str[j];
+        str[j]=temp;
+    }
+
+}
+
+
+int stringtoint (char str[],int *p1,int f, int l)
+{
+    int x=0,c=0,i=f,flag=0;
+    if(str[0]=='-')
+    {
+        flag=1;
+        i++;
+    }
+    for(;str[i] && i<l;i++)
+    {
+        if(str[i]!=' ')
+        {
+        if(str[i]>='0' && str[i]<='9')
+       {
+        x=str[i]-'0';
+        c=c*10+x;
+        }
+        else
+        {
+            return 0;
+        }
+    }}
+    if(flag==1)
+    {
+        c=c*-1;
+    }
+    *p1=c;
+    return 1;
+}
+char triangle (char *str)
+{
+    char st[]="";
+    int arr[0]={0},p1=0;
+    stringtoint(str,&p1,0,2);
+    arr[0]=p1;
+    stringtoint(str,&p1,2,5);
+    arr[1]=p1;
+    stringtoint(str,&p1,5,8);
+    arr[2]=p1;
+    for(int i=0;i<3;i++)
+    {
+        printf(" %d ",arr[i]);
+    }
+
+
+        if(arr[0]==arr[1]==arr[2]  || 1==2==3)
+        {
+
+            return 0;
+        }
+        else if(arr[0]==arr[1] ||arr[1]==arr[2] || arr[0]==arr[2])
+        {
+            //*st= "Isosceles triangle";
+            //return st;
+        }
+        else if(arr[0]!=arr[1]!=arr[2])
+        {
+            //*st="Scalene triangle";
+            //return st;
+        }
+        else
+        {
+            //*st="Not triangle";
+            //return st;
+        }
+
+}
+
+
+
+
+    int main()
+    {
+        char str[]="2 20 2";
+        int p1=0;
+        //string_printf(p2);
+        //string(str);
+        triangle(str);
+        //string_printf(triangle(str));
+        //printf("%d",triangle(str));
+        return 0;
+    }
+//////////////////////////////////////////////////////////////////the max and min from two numb in another file////////////////
+static int max =0xFFFFFFFF;
+static int min =0x8000000;
+void numb (int n)
+{
+    if(max<n)
+    {
+        max=n;
+    }
+    if(min>n)
+    {
+        min=n;
+    }
+}
+int  max1 (void)
+{
+  return max;
+}
+int  min1 (void)
+{
+ return min;
+}
+main:
+#include <stdio.h>
+#include <stdlib.h>
+int max1(void);
+int min1(void);
+
+int main()
+{
+    int n,x;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&x);
+        numb(x);
+    }
+    printf("max=%d",max1());
+    printf("\nmin=%d",min1());
+    printf("\nHello world!\n");
+    return 0;
+}
+///////////////////////////////////////////////////////////////////////////sorting and repeated number////////////////////////
+#include <stdio.h>
+#include <stdlib.h>
+int repeated2 (int *arr,int s,int *p)
+{
+    int i=0,max=arr[0],min=arr[0],max1=0,count_size=0 ;
+    for( i=0; i<s; i++)
+    {
+        if(arr[i]>max)
+        {
+            max=arr[i];
+        }
+        if(arr[i]<min)
+        {
+            min=arr[i];
+        }
+    }
+    count_size=max-min+1;
+    int *count =(int*)calloc(count,sizeof(int));
+    for(i=0; i<s; i++)
+    {
+        count[arr[i]-min]++;
+    }
+    for( int j=0; j<count_size; j++)
+    {
+        printf("i= %d   count= %d\n",j+min,count[j]);
+    }
+    for( i=0; i<count_size; i++)
+    {
+        if(count[i]>max1)
+        {
+            max1=count[i];
+            *p=i+min;
+        }
+    }
+    printf("max= %d *p= %d",max1,*p);
+    return max1;
+}
+
+int search_binary (int *arr,int s,int numb)
+{
+    int m,f,l;
+    f=0;
+    l=s-1;
+    while(1)
+    {
+        m=(l+f)/2;
+        if(arr[m]==numb)
+        {
+            return m;
+        }
+        else if(arr[m]>numb)
+        {
+            l=m-1;
+
+        }
+        else
+        {
+            f=m+1;
+        }
+        if(f>l)
+        {
+            return -1;
+        }
+    }
+}
+
+void array_print (int *arr,int s)
+{
+    for(int i=0; i<s; i++)
+    {
+        printf("arr= %d\n",arr[i]);
+    }
+    printf("\n");
+}
+int sim (int* arr,int s)
+{
+    int i=0,j=0,max=arr[0],l=s-1,temp=0,x=0;
+    for(j=0; j<s; j++)
+    {
+        max=0;
+        for(i=0; i<=l; i++)
+        {
+
+            if(max<arr[i])
+            {
+                max=arr[i];
+                x=i;
+            }
+
+        }
+        temp=arr[l];
+        arr[l]=arr[x];
+        arr[x]=temp;
+        l--;
+    }
+}
+void buddle (int*arr,int s)
+{
+    int i,j,temp=0,c=0,f=1;
+    for( i=0; i<s; i++)
+    {
+        f=0;
+        for( j=0; j<s-1-i; j++)
+        {
+            c++;
+            if(arr[j]>arr[j+1])
+            {
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+                f=1;
+            }
+
+        }
+        if(f==0)
+        {
+            break;
+        }
+    }
+    printf("c=%d\n",c);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////string of pointer////////////////////////////
+#include <stdio.h>
+#include <stdlib.h>
+void string_printf(char *str)
+{
+    for(int i=0;str[i]; i++)
+    {
+
+      printf(" %c",str[i]);
+    }
+                printf("\n");
+
+}
+void captal_to_small(char*str)
+{
+    for(int i=0; str[i]; i++)
+    {
+
+        if(str[i] >='A'&& str[i]<= 'Z')
+        {
+            str[i]= str[i]-'A'+ 'a';
+        }
+
+    }
+
+}
+int compare_string(char**str1,int s,char*str2)
+{
+    int x,c=0;
+    captal_to_small(str2);
+    for(int i=0; i<s; i++)
+    {
+        captal_to_small(str1[i]);
+        string_printf(str1[i]);
+        string_printf(str2);
+        for(int j=0; str1[i][j]||str2[j]; j++)
+        {
+            if(str1[i][j]!=str2[j])
+            {
+                printf("%c\n",str2[j]);
+                break;
+            }
+            else
+            {
+                x=j;
+                ++c;
+            }
+        }
+        printf("x=%d,c=%d\n",x,c);
+        if(c==x+1)
+        {
+            return 1;
+        }
+    }
+
+
+}
+void  string (char str[])
+{
+    int i=0;
+    scanf(" %c",&str[i]);
+    for(; str[i]!='\n';)
+    {
+        i++;
+        scanf("%c",&str[i]);
+    }
+    str[i]=0;
+}
+
+int main()
+{
+    char s0[]="AHMED";
+    char s1[]="mohamed";
+    char s2[]="esmail";
+    char s3[]="SARa";
+    char s4[]="ismail";
+    char s5[]="mohamued";
+    char s6[]="aya";
+    char s7[]="nora";
+    char s8[]="abdelharem";
+    char s9[]="saleh";
+    char s10[]="mostafa";
+    char s11[]="amira";
+    char s12[]="jehan";
+    char s13[]="omar";
+    char s14="yossef";
+    int *arr[]= {s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14};
+    int s=sizeof(arr)/sizeof(arr[0]),x=0;
+    char str[]="";
+    string(str);
+    string_printf(str);
+    //arr[0][1]="j";
+    //captal_to_small(arr[3]);
+    x=compare_string(arr,14,str);
+    printf("x=  %d  \n",x);
+    printf("Hello world!\n");
+    return 0;
+}
+///////////////////////////////////////////////////////search for count of character in array of pointer////////////////////////////
+
+
+#include <stdio.h>
+#include <stdlib.h>
+void string_printf(char *str)
+{
+    for(int i=0;str[i]; i++)
+    {
+
+      printf(" %c",str[i]);
+    }
+                printf("\n");
+
+}
+void captal_to_small(char*str)
+{
+    for(int i=0; str[i]; i++)
+    {
+
+        if(str[i] >='A'&& str[i]<= 'Z')
+        {
+            str[i]= str[i]-'A'+ 'a';
+        }
+
+    }
+
+}
+int  compare_string(char**str1,int s,char*str2,int*p)
+{
+    int f=0,c=0,x=0;
+    captal_to_small(str2);
+    for(int i=0; i<s; i++)
+    {
+        captal_to_small(str1[i]);
+        string_printf(str1[i]);
+        string_printf(str2);
+        for(int j=0; str1[i][j]; j++)
+        {
+            printf("arr=%c\n",str1[i][j]);
+
+            if(str1[i][j]==str2[0])
+            {
+                printf("arrL=%c\n",str1[i][j]);
+               ++c;
+               printf("c=%d\n",c);
+               if(f==0)
+               {
+               f=1;
+               }
+            }
+            if(f==1)
+            {
+                printf("f1=%d\n",f);
+                x=j;
+                f=2;
+            }
+        }
+        printf("x=%d,c=%d ,f=%d\n",x,c,f);
+
+    }
+*p=x;
+return c;
+}
+void  string (char str[])
+{
+    int i=0;
+    scanf(" %c",&str[i]);
+    for(; str[i]!='\n';)
+    {
+        i++;
+        scanf("%c",&str[i]);
+    }
+    str[i]=0;
+}
+
+int main()
+{
+    char s0[]="AHMED";
+    char s1[]="mahamed";
+    char s2[]="esmail";
+    char s3[]="SARa";
+    char s4[]="ismail";
+    char s5[]="mohamued";
+    char s6[]="aya";
+    char s7[]="nora";
+    char s8[]="abdelharem";
+    char s9[]="saleh";
+    char s10[]="mostafa";
+    char s11[]="amira";
+    char s12[]="jehan";
+    char s13[]="omar";
+    char s14="yossef";
+    int *arr[]= {s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14};
+    int s=sizeof(arr)/sizeof(arr[0]),x=0,y=0;
+    char str[]="m";
+    x=compare_string(arr,14,str,&y);
+    printf("count=  %d , the first plzce=%d \n",x,y);
+    printf("Hello world!\n");
+    return 0;
+}
+///////////////////////////////////////////////array_print//////////////////////////////
+void array_print(int*arr,int s)
+{
+    for(int i=0;i<s;i++)
+    {
+        printf("%5d",arr[i]);
+    }
+    printf("\n");
+}
+///////////////////////////////////////////////////////////////prefect //////////////////////
+int prefect_number(int n)
+{
+    int sum=0;
+    for(int i=1;i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            sum+=i;
+        }
+        else if(sum==n)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}

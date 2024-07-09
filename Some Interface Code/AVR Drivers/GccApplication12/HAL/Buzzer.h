@@ -1,0 +1,27 @@
+/*
+ * Buzzer.h
+ *
+ * Created: 12/16/2022 6:57:00 PM
+ *  Author: ahmed
+ */ 
+
+
+#ifndef BUZZER_H_
+#define BUZZER_H_
+////////////////////////////////////////////////////CONG//////////////////////////////////////////////////////////////
+
+
+#define Buzzer_Pin          PINB2
+
+#define Fan_Pin             PINC0
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Buzzer_On (void);
+void Buzzer_OFF (void);
+void Fan_On (void);
+void Fan_OFF (void);
+
+
+#endif /* BUZZER_H_ */

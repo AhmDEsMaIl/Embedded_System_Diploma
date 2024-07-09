@@ -1,0 +1,236 @@
+#include "MemMap.h"
+#include "Utiles.h"
+#include "StdTypes.h"
+#include "DIO_interface.h"
+#include "Motor_interface.h"
+#include "Motor_cfg.h"
+#include "LCD.h"
+#include "ADC.h"
+#include "LED.h"
+#include "Sensors.h"
+#include "Temp_Filter.h"
+#include "Buzzer.h"
+#include "Interrupt.h"
+#include "NVM.h"
+#include "Timer.h"
+#define F_CPU     8000000
+#include <util/delay.h>
+#define Global_Enable   sei
+#include "Keypad.h"
+u16 pass=0;
+volatile u8 c=0;
+int main(void)
+{
+	/*Replace with your application code */
+	DIO_Init();
+	LCD_Init();
+	KEYPAD_Init();
+	ADC_Init(VREF_AVCC,ADC_SCALER_64);
+	Temp_FilterInit();
+	EXI_Enable(EX_INT0);
+	EXI_TriggerEdge(EX_INT0,FALLING_EDGE);
+	EXI_Enable(EX_INT1);
+	EXI_TriggerEdge(EX_INT0,RISING_EDGE);
+	//Global_Enable();
+	timer on with prescaler 8 and with normal mode
+			//TCCR0=2;
+			//enable overflow timer interpret
+			TIMSK=1;
+			//enable compare unit interpret
+			SET_BIT(TIMSK,OCIE0);
+			// enable toggle of compare unit in normal mode
+			SET_BIT(TCCR0,COM00);
+			//enable  CTC mode
+		//SET_BIT(TCCR0,WGM01);
+	TIMER0_Init(TIMER0_FASTPWM_MODE,TIMER0_SCALER_8);
+	TIMER0_OC0Mode(OC0_NON_INVERTING);	
+	u16 x=0,t1,t2,y;
+	volatile u8 c;
+	TCNT0=0;
+	OCR0=0;
+	while(1)
+	{
+		u16 adc=0;
+	   //DIO_WritePin(PINC0,HIGH);
+	   /*LCD_SetCursor(1,0);
+	   LCD_WriteNumber(x);
+	   x++;
+	   if(x==10)
+	   {
+		   x=0;
+	   }
+	   _delay_ms(300)*/;
+	   //ADC_Read(CH_0);
+	   //DIO_WritePin(PINC0,LOW);
+	   adc=ADC_Read(CH_0);
+ 	   OCR0=255-(adc/4);
+       //OCR0=TCNT0+10;
+	   
+	}
+}
+/*ISR(TIMER0_OVF_vect)
+{
+	static u16 c=0;
+	c++;
+	if(c==1953)
+	{
+		DIO_TogglePin(PINC1);
+		
+	}
+	if(c==3906)
+	{
+		DIO_TogglePin(PINC0);
+		DIO_TogglePin(PINC1);
+		c=0;
+	}
+}*/
+/*ISR(TIMER0_OVF_vect)
+{
+	static u16 c=0;
+	c++;
+	
+	if(c==3907)
+	{
+		TCNT0=192;
+		DIO_TogglePin(PINC0);
+		c=0;
+	}
+}*/
+/*ISR(TIMER0_OVF_vect)
+{
+	static u16 c=0;
+	TCNT0=6;
+	c++;
+	if(c==4000)
+	{
+		DIO_TogglePin(PINC0);
+		c=0;
+	}
+}*/
+/*ISR(TIMER0_OVF_vect)
+{
+	static u16 c=0;
+	TCNT0=6;
+	c++;
+	if(c==32)
+	{
+		DIO_WritePin(PINC0,HIGH);
+	}
+	if(c==40)
+	{
+		DIO_WritePin(PINC0,LOW);
+		c=0;
+	}
+}*/
+/*ISR(TIMER0_OVF_vect)
+{
+	static u16 c=0;
+	TCNT0=236;
+	c++;
+	if(c==4)
+	{
+		DIO_WritePin(PINC0,HIGH);
+	}
+	if(c==5)
+	{
+		DIO_WritePin(PINC0,LOW);
+		c=0;
+	}
+}*/
+/*ISR(TIMER0_OVF_vect)
+{
+	static u8 flag=0;
+	
+	if(flag==0)
+	{
+		TCNT0=236;
+		DIO_WritePin(PINC0,HIGH);
+		flag=1;
+	}
+	if(flag==1)
+	{
+		TCNT0=176;
+		DIO_WritePin(PINC0,LOW);
+		flag=0;
+	}
+}*/
+/*ISR(TIMER0_OVF_vect)
+{
+	static u8 c=0;
+	TCNT0=6;
+     c++;
+	 if(c%20==0)
+	 {
+		 DIO_TogglePin(PINC0);
+	 }
+	 if(c%40==0)
+	 {
+		 DIO_TogglePin(PINC1);
+	 }
+	 if(c%100==0)
+	 {
+		 DIO_TogglePin(PINC2);
+	 }
+	 if(c==200)
+	 {
+		 c=0;
+	 }
+	
+}*/
+/*ISR(TIMER0_OVF_vect)
+{
+	static u8 c=0;
+	TCNT0=255;
+	c++;
+	DIO_TogglePin(PINC0);
+	if(c%10==0)
+	{
+		DIO_TogglePin(PINC1);
+	}
+	if(c%100==0)
+	{
+		DIO_TogglePin(PINC2);
+	}
+	if(c==200)
+	{
+		c=0;
+	}
+	
+}*/
+/*ISR(TIMER0_OVF_vect)
+{
+	static u8 c=0;
+	TCNT0=205;
+	c++;
+	if(c==3)
+	{
+		DIO_WritePin(PINC0,HIGH);
+	}
+	if(c==6)
+	{
+		DIO_WritePin(PINC0,LOW);
+	}
+	
+}*/
+/*ISR(TIMER0_OVF_vect)
+{
+	static u16 c=0;
+	TCNT0=6;
+	c++;
+	if(c==240)
+	{
+		DIO_WritePin(PINC1,HIGH);
+		c=0;
+	}
+	
+}*/
+ISR(TIMER0_OVF_vect)
+{
+	DIO_TogglePin(PINC0);
+	//c++;
+}
+ISR(TIMER0_OC_vect)
+{
+	DIO_TogglePin(PINC1);
+	//OCR0=TCNT0+10;
+}

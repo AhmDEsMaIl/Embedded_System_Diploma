@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F43FD5A-3526-405E-BD9D-5D6DCFAFC78B}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "RTOS_Code_Semaphore_Tasks", "RTOS_Code_Semaphore_Tasks\RTOS_Code_Semaphore_Tasks.cproj", "{50B07AA8-715A-4A45-BA0F-3A9B83E18CCB}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "RTOS_Code_Priority_INV_01", "..\RTOS_Code_with_Priority_INV_01_Tasks\RTOS_Code_Priority_INV_01\RTOS_Code_Priority_INV_01.cproj", "{DCE6C7E3-EE26-4D79-826B-08594B9AD897}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "RTOS_Code_Priority_INV_02", "..\RTOS_Code_with_Priority_INV_02_Tasks\RTOS_Code_Priority_INV_02\RTOS_Code_Priority_INV_02.cproj", "{A6B59BD5-FCD7-464C-9235-F3285BE280D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50B07AA8-715A-4A45-BA0F-3A9B83E18CCB}.Debug|AVR.ActiveCfg = Debug|AVR
+		{50B07AA8-715A-4A45-BA0F-3A9B83E18CCB}.Debug|AVR.Build.0 = Debug|AVR
+		{50B07AA8-715A-4A45-BA0F-3A9B83E18CCB}.Release|AVR.ActiveCfg = Release|AVR
+		{50B07AA8-715A-4A45-BA0F-3A9B83E18CCB}.Release|AVR.Build.0 = Release|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.ActiveCfg = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Debug|AVR.Build.0 = Debug|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.ActiveCfg = Release|AVR
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897}.Release|AVR.Build.0 = Release|AVR
+		{A6B59BD5-FCD7-464C-9235-F3285BE280D5}.Debug|AVR.ActiveCfg = Debug|AVR
+		{A6B59BD5-FCD7-464C-9235-F3285BE280D5}.Debug|AVR.Build.0 = Debug|AVR
+		{A6B59BD5-FCD7-464C-9235-F3285BE280D5}.Release|AVR.ActiveCfg = Release|AVR
+		{A6B59BD5-FCD7-464C-9235-F3285BE280D5}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50B07AA8-715A-4A45-BA0F-3A9B83E18CCB} = {0F43FD5A-3526-405E-BD9D-5D6DCFAFC78B}
+		{DCE6C7E3-EE26-4D79-826B-08594B9AD897} = {0F43FD5A-3526-405E-BD9D-5D6DCFAFC78B}
+		{A6B59BD5-FCD7-464C-9235-F3285BE280D5} = {0F43FD5A-3526-405E-BD9D-5D6DCFAFC78B}
+	EndGlobalSection
+EndGlobal

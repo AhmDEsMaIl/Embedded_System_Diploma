@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+void printf_2d_array(int col,int row,int arr[][col])
+{
+    for(int i=0;i<row;i++)
+    {
+        for(int j=0;j<col;j++)
+        {
+            if(arr[i][j]!=0)
+            {
+            printf("%3d",arr[i][j]);
+            }
+            else
+            {
+                printf("   ");
+            }
+        }
+        printf("\n");
+    }
+}
+void enter_user (int *p1,int*p2,int*p3,int arr[][9])
+{
+    printf("please enter number you want to change\n");
+    scanf("%d",&(*p3));
+    while(1^check_martix_for_empty_space(p1,p2,arr))
+    {
+    printf("please enter row and coloum together\n");
+    scanf("%d",&(*p1));
+    scanf("%d",&(*p2));
+    }
+    //int x=check_martix_for_empty_space(p1,p2,arr);
+    //printf("x#=%d\n",x);
+    if(check_martix_for_empty_space(p1,p2,arr))
+    {
+       //arr[*p1][*p2]=
+    }
+    else
+    {
+       printf("please enter another numbers\n");
+    }
+
+}
+int check_martix_for_empty_space (int *p1,int*p2,int arr[][9])
+{
+    //printf("*p1=%d,*p2=%d",*p1,*p2);
+    if(arr[*p1][*p2]==0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+int main()
+{
+    int grid [9][9]=  { {3, 0, 6, 5, 0, 8, 4, 0, 0},
+                      {5, 2, 0, 0, 0, 0, 0, 0, 0},
+                      {0, 8, 7, 0, 0, 0, 0, 3, 1},
+                      {0, 0, 3, 0, 1, 0, 0, 8, 0},
+                      {9, 0, 0, 8, 6, 3, 0, 0, 5},
+                      {0, 5, 0, 0, 9, 0, 6, 0, 0},
+                      {1, 3, 0, 0, 0, 0, 2, 5, 0},
+                      {0, 0, 0, 0, 0, 0, 0, 7, 4},
+                      {0, 0, 5, 2, 0, 6, 3, 0, 0} };
+    //int grid_cons[]={01,04,07,08,12,13,14,15,16,17,18,20,23,24,25,26,30,};
+    printf_2d_array(9,9,grid);
+    int x,y,z;
+    enter_user(&x,&y,&z,grid);
+    printf("x=%d,y=%d,z=%d",x,y,z);
+
+}

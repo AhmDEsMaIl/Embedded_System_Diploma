@@ -1,0 +1,71 @@
+#include "MemMap.h"
+#include "Utiles.h"
+#include "StdTypes.h"
+#include "DIO_interface.h"
+#include "Motor_interface.h"
+#include "Motor_cfg.h"
+#include "LCD.h"
+#include "ADC.h"
+#include "LED.h"
+#include "Sensors.h"
+#include "Temp_Filter.h"
+#include "Buzzer.h"
+#include "Interrupt.h"
+#include "NVM.h"
+#include "Timer.h"
+#include "RGB.h"
+#include "Timer_Services.h"
+#include "ULTRASONIC.h"
+#define F_CPU     8000000
+#include <util/delay.h>
+#define Global_Enable   sei
+#include "Keypad.h"
+static volatile u16 dis=0;	
+int main(void)
+{
+	/*Replace with your application code */
+	DIO_Init();
+	LCD_Init();
+	KEYPAD_Init();
+	ADC_Init(VREF_AVCC,ADC_SCALER_64);
+	Temp_FilterInit();
+	EXI_Enable(EX_INT0);
+	EXI_TriggerEdge(EX_INT0,FALLING_EDGE);
+	EXI_Enable(EX_INT1);
+	EXI_TriggerEdge(EX_INT0,RISING_EDGE);
+	TIMER0_Init(TIMER0_FASTPWM_MODE,TIMER0_SCALER_8);
+	TIMER0_OC0Mode(OC0_NON_INVERTING);
+	Timer1_Init(TIMER1_NORMAL_MODE,TIMER1_SCALER_8);
+	Timer1_OCRA1Mode(OCRA_DISCONNECTED);
+	Timer1_OCRB1Mode(OCRB_DISCONNECTED);
+	TIMER2_Init(TIMER2_FASTPWM_MODE,TIMER2_SCALER_8);
+	TIMER2_OC2Mode(OC2_NON_INVERTING);
+	Four_UltraSonic_Init();
+	 /*Timer1_ICU_SetCallBack(f1);
+	 Timer1_ICU_InterruptEnable();*/
+	TIMER2_OV_InterruptEnable();
+	Global_Enable();
+	while(1)
+	{
+		u8 x=0;
+		 Four_UltraSonic_Runnable();
+		 x=Four_UltraSonic_get_distance(US1);
+		 LCD_SetCursor(0,0);
+		 LCD_WriteNumber(x);
+		 
+		 Four_UltraSonic_Runnable();
+		 x=Four_UltraSonic_get_distance(US2);
+		 LCD_SetCursor(0,8);
+		 LCD_WriteNumber(x);
+		  
+	     Four_UltraSonic_Runnable();
+	     x=Four_UltraSonic_get_distance(US3);
+	     LCD_SetCursor(1,0);
+	     LCD_WriteNumber(x);
+	     
+	     Four_UltraSonic_Runnable();
+	     x=Four_UltraSonic_get_distance(US4);
+	     LCD_SetCursor(1,8);
+	     LCD_WriteNumber(x);
+	}
+}
